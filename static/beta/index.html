@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"> -->
+  <link async  rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+  <link async  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <link  async  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script   src="https://kit.fontawesome.com/681feeeb34.js" crossorigin="anonymous"></script>
+  <link async  rel="stylesheet" href="css/home.css" />
+  <link  rel="stylesheet" href="css/helper.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light  bg-dark">
+    <a class="navbar-brand" href="#"><img src="https://deikho.com/images/logo.png" height="32" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/all#webseries">WEB SERIES </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/all#comedy">COMEDY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/all#shows">TV SHOWS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/all#music">TALENT HUNT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/all#upcoming">UPCOMING</a>
+        </li>
+      
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+          <ul class="login-ui login mb-0">
+              <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+      <ul class="login-ui mb-0 profile">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./img/avatar.png" style="
+                height: 36px;
+                width: 36px;
+                border-radius: 40px;
+            ">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <span class="dropdown-item" id="name"></span>
+                <a class="dropdown-item" href="/accountSettings">Account Settings</a>
+                <!-- <span class="dropdown-item" id="logout">Logout</span> -->
+                <!-- <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div> -->
+            </li>
+           
+      </ul>
+     
+    </div>
+  </nav>
+
+  <!-- Swiper Slider -->
+
+  <div class="swiper-container border-line">
+    <!-- swiper slides -->
+    <div class="swiper-wrapper featured-slider">
+      <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);">
+        
+        <div class="header-all-text">
+            <!-- <h1 style="text-transform:capitalize" class="text-white">{{seriesDetails.series_name.toLowerCase().trim()}}</h1>
+            <small class="text-white">{{seriesDetails.duration}}</small>&nbsp;|&nbsp;
+            <small
+              
+              style="padding-bottom:15px;"
+            >
+              <i class="text-white"></i>{{cat.category_name}}</i>
+            </small>
+  
+            <div class="pad-15 text-white">
+              <p>{{seriesDetails.series_description}}</p>
+            </div>
+            <div class="row lrm-0 lrp-0 col-md-7 col-lg-7 col-sm-12 button-group">
+              <div class="col lrp-0">
+              <button class="btn btn-grey btn-daikho" click="Play_Video('12')" >
+
+                  <span style="margin-top:2.5px;
+                  align-content: center;"><i class="fas fa-play"></i> &nbsp; Watch Now</span> 
+              </button>
+            </div>
+            <div class="col">
+
+              <button
+                class="btn btn-hollow btn-hollow-white"
+                
+              ><a href="/tvCollections/details/21">Details</a></button>
+            </div>
+            </div> -->
+          </div>
+                </div>
+
+      <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);">
+        <h2>HELLO WORLD</h2>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=52);">
+        <h2>Random Text 1</h2>
+      </div>
+
+      <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=21);"></div>
+
+      <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);"></div>
+    </div>
+    <!-- !swiper slides -->
+
+    <!-- next / prev arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- !next / prev arrows -->
+
+    <!-- pagination dots -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <!-- !pagination dots -->
+  </div>
+
+  <!-- Swiper slider  -->
+
+  <main>
+    <section data-v-f0602dd0="">
+      <br data-v-f0602dd0="" />
+      <div class="featured-content-custom web-most" data-v-f0602dd0="">
+        <h2 class="text-white">Most Watched</h2>
+        <br data-v-f0602dd0="" />
+        <br data-v-f0602dd0="" />
+        <div class="row" data-v-f0602dd0="">
+          <div class="col-md-5 pad-5" data-v-f0602dd0="">
+            <div class="view-cards-vertical-big" data-v-f0602dd0="">
+              <a href="/tvCollections/details/33" class="h-300" data-v-f0602dd0="">
+                <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                  <div class="v-responsive__sizer"  ></div>
+                  <div class="v-image__image v-image__image--cover"
+                    style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/12/19/33.jpg?Expires=1585081020&amp;Signature=B2-aevz0LQ6tjJprmplHGMfTqVrmrno3S9fdgPJgJg-OD8lOwMNQ1djRFJSWHjJyLLZmzBAlbIwW88WC-an7WbBch8XHoWMAShs2ixaoXzx80D7wK4BA6Yjsww9OfMYkXpi983J20bxgEUGpdrMNhx1eH0JBaniPuA8GVECyFQ1imY27946c2bN~5yGPmIWOd5NIx15EKyg6kN--SAVwDz1tEqEPZOzzHvPB~BqJout6DME0X9h0bsxNnLk8H~~YDhvLvSJDjQhzX12B8HqmLCS-aYPIGVNboFO~1hqucf3pY7AWoOurQCVLZ-iOGEFlF0LyhfF4oT1GzADVJfcI4w__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                  </div>
+                  <!---->
+                  <div class="v-responsive__content"></div>
+                </div>
+              </a>
+              <div class="pt-5-cus" data-v-f0602dd0="">
+                <small class="text-white" data-v-f0602dd0=""><i data-v-f0602dd0="">Shows</i></small>
+                <p data-v-f0602dd0="" class="text-white" style="text-transform: capitalize;">
+                  batana hi padega
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7" data-v-f0602dd0="">
+            <div class="row" data-v-f0602dd0="">
+              <div class="col-md-4 pad-5" data-v-f0602dd0="">
+                <div class="view-cards-vertical" data-v-f0602dd0="">
+                  <a href="/tvCollections/details/34" class="h-300" data-v-f0602dd0="">
+                    <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                      <div class="v-responsive__sizer"  ></div>
+                      <div class="v-image__image v-image__image--cover"
+                        style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/12/23/34.jpg?Expires=1585081020&amp;Signature=Xh7ACyT9xVtQNZ1-ZekJ4e3cA8tUg8t1aXF-zRcqL2b60iP9ab~f2GbfcevEYdOlUzO5F6klnRHVoe7xJSZT69qjLjsPcMwQ79K4lmVVQSZWqDdIdmSmIlSDEaGta1JIGQgzu62ptI8afQuPvTAVZANqd9vNArMhee8qZoF~xPqWeaqIJ1PT~KfVDuCi6wRXuQv9UGX8TkUqUdaXry5xMhs~Zpyb2YJCggim2gwkcPA7BQBJjZ1bKO8ReGvaYxiydIYhjHbUeINxJAeRTMWi8-Ymfr5RSitKbkgLMIJ1lbVMPWWGCTCFcsVHYOu4mY~kfCuj1Pwq-QIQA-UhJdpQoA__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                      </div>
+                      <!---->
+                      <div class="v-responsive__content"></div>
+                    </div>
+                  </a>
+                  <div class="pt-5-cus" data-v-f0602dd0="">
+                    <small class="text-white" data-v-f0602dd0=""><i data-v-f0602dd0="">Comedy</i></small>
+                    <p data-v-f0602dd0="" class="text-white" style="text-transform: capitalize;">
+                      corporate snakes
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 pad-5" data-v-f0602dd0="">
+                <div class="view-cards-vertical" data-v-f0602dd0="">
+                  <a href="/tvCollections/details/24" class="h-300" data-v-f0602dd0="">
+                    <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                      <div class="v-responsive__sizer"  ></div>
+                      <div class="v-image__image v-image__image--cover"
+                        style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/10/29/24.jpg?Expires=1585081020&amp;Signature=Mb67Sh6zJWuC6~kgAiuO73UZYjAw9vnH8C2kiuPOssCDRlU6EfmCdgAJBrBdn-9mO3Ez4MaWIcvM6ktGCXQVftXGiuXFIIK1V121sSX6leS1cGER0eTq2VnKIJtVzXBm7PNro2lNznPt-1C3SRDVccVIp0Hb0mFzlWKBFfVPUd5D18nnx6INGddHp55Ty6TYgeZVWjVSXS2QehkHZ0jn9PJZYDHJcB0alBDB0pVnjkS98py4shGUF~T8w~E5l85Z1FwsYVgPnwzan7afkpLrBQssfPjHiwncppoZPYZoLMCIDOl3B4ZCFKpG5h2nCaWQfxrJu0aox8Tj0jP5ww7DtA__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                      </div>
+                      <!---->
+                      <div class="v-responsive__content"></div>
+                    </div>
+                  </a>
+                  <div class="pt-5-cus" data-v-f0602dd0="">
+                    <small class="text-white" data-v-f0602dd0=""><i data-v-f0602dd0="">Shows</i></small>
+                    <p data-v-f0602dd0="" class="text-white" style="text-transform: capitalize;">
+                      the viral show
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 pad-5" data-v-f0602dd0="">
+                <div class="view-cards-vertical" data-v-f0602dd0="">
+                  <a href="/tvCollections/details/46" class="h-300" data-v-f0602dd0="">
+                    <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                      <div class="v-responsive__sizer"  ></div>
+                      <div class="v-image__image v-image__image--cover"
+                        style='background-image: url("https://deikho.com/images/series_thumbs/2020/02/18/46.jpg"); background-position: center center;'>
+                      </div>
+                      <!---->
+                      <div class="v-responsive__content"></div>
+                    </div>
+                  </a>
+                  <div class="pt-5-cus" data-v-f0602dd0="">
+                    <small class="text-white" data-v-f0602dd0=""><i data-v-f0602dd0="">Web Series</i></small>
+                    <p data-v-f0602dd0="" class="text-white" style="text-transform: capitalize;">
+                      parinday
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-content-custom-mobile" data-v-f0602dd0="">
+        <br/>
+        <div class="col-md-12"
+          style="display:inline-flex !important;justify-content:center;padding-left:0px;padding-right:0px;"
+          data-v-f0602dd0="">
+          <div class="col-md-6 pad-5" data-v-f0602dd0="">
+            <div class="view-cards-vertical" data-v-f0602dd0="">
+              <a href="/tvCollections/details/33" class="h-300" data-v-f0602dd0="">
+                <div class="v-responsive v-image image-custom-vertical lrp-0" data-v-f0602dd0="">
+                  <div class="v-image__image v-image__image--cover"
+                    style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/12/19/33.jpg?Expires=1585081020&amp;Signature=B2-aevz0LQ6tjJprmplHGMfTqVrmrno3S9fdgPJgJg-OD8lOwMNQ1djRFJSWHjJyLLZmzBAlbIwW88WC-an7WbBch8XHoWMAShs2ixaoXzx80D7wK4BA6Yjsww9OfMYkXpi983J20bxgEUGpdrMNhx1eH0JBaniPuA8GVECyFQ1imY27946c2bN~5yGPmIWOd5NIx15EKyg6kN--SAVwDz1tEqEPZOzzHvPB~BqJout6DME0X9h0bsxNnLk8H~~YDhvLvSJDjQhzX12B8HqmLCS-aYPIGVNboFO~1hqucf3pY7AWoOurQCVLZ-iOGEFlF0LyhfF4oT1GzADVJfcI4w__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                  </div>
+                  <!---->
+                  <div class="v-responsive__content"></div>
+                </div>
+              </a>
+              <div class="pt-5-cus" data-v-f0602dd0="">
+                <p data-v-f0602dd0="" style="text-transform: capitalize;">
+                  batana hi padega
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 pad-5" data-v-f0602dd0="">
+            <div class="view-cards-vertical" data-v-f0602dd0="">
+              <a href="/tvCollections/details/34" class="h-300" data-v-f0602dd0="">
+                <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                  <div class="v-image__image v-image__image--cover"
+                    style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/12/23/34.jpg?Expires=1585081020&amp;Signature=Xh7ACyT9xVtQNZ1-ZekJ4e3cA8tUg8t1aXF-zRcqL2b60iP9ab~f2GbfcevEYdOlUzO5F6klnRHVoe7xJSZT69qjLjsPcMwQ79K4lmVVQSZWqDdIdmSmIlSDEaGta1JIGQgzu62ptI8afQuPvTAVZANqd9vNArMhee8qZoF~xPqWeaqIJ1PT~KfVDuCi6wRXuQv9UGX8TkUqUdaXry5xMhs~Zpyb2YJCggim2gwkcPA7BQBJjZ1bKO8ReGvaYxiydIYhjHbUeINxJAeRTMWi8-Ymfr5RSitKbkgLMIJ1lbVMPWWGCTCFcsVHYOu4mY~kfCuj1Pwq-QIQA-UhJdpQoA__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                  </div>
+                  <!---->
+                  <div class="v-responsive__content"></div>
+                </div>
+              </a>
+              <div class="pt-5-cus" data-v-f0602dd0="">
+                <p data-v-f0602dd0="" style="text-transform: capitalize;">
+                  corporate snakes
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12"
+          style="display:inline-flex !important;justify-content:center;padding-left:0px;padding-right:0px;"
+          data-v-f0602dd0="">
+          <div class="col-md-6 pad-5" data-v-f0602dd0="">
+            <div class="view-cards-vertical" data-v-f0602dd0="">
+              <a href="/tvCollections/details/24" class="h-300" data-v-f0602dd0="">
+                <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                  <div class="v-image__image v-image__image--cover"
+                    style='background-image: url("https://d2o1c9j7e49z0u.cloudfront.net/files/series_thumbs/2019/10/29/24.jpg?Expires=1585081020&amp;Signature=Mb67Sh6zJWuC6~kgAiuO73UZYjAw9vnH8C2kiuPOssCDRlU6EfmCdgAJBrBdn-9mO3Ez4MaWIcvM6ktGCXQVftXGiuXFIIK1V121sSX6leS1cGER0eTq2VnKIJtVzXBm7PNro2lNznPt-1C3SRDVccVIp0Hb0mFzlWKBFfVPUd5D18nnx6INGddHp55Ty6TYgeZVWjVSXS2QehkHZ0jn9PJZYDHJcB0alBDB0pVnjkS98py4shGUF~T8w~E5l85Z1FwsYVgPnwzan7afkpLrBQssfPjHiwncppoZPYZoLMCIDOl3B4ZCFKpG5h2nCaWQfxrJu0aox8Tj0jP5ww7DtA__&amp;Key-Pair-Id=APKAIB4AMB4X33ICZZ3A"); background-position: center center;'>
+                  </div>
+                  <!---->
+                  <div class="v-responsive__content"></div>
+                </div>
+              </a>
+              <div class="pt-5-cus" data-v-f0602dd0="">
+                <p data-v-f0602dd0="" style="text-transform: capitalize;">
+                  the viral show
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 pad-5" data-v-f0602dd0="">
+            <div class="view-cards-vertical" data-v-f0602dd0="">
+              <a href="/tvCollections/details/46" class="h-300" data-v-f0602dd0="">
+                <div class="v-responsive v-image image-custom-vertical" data-v-f0602dd0="">
+                  <div class="v-image__image v-image__image--cover"
+                    style='background-image: url("https://deikho.com/images/series_thumbs/2020/02/18/46.jpg"); background-position: center center;'>
+                  </div>
+                  <!---->
+                  <div class="v-responsive__content"></div>
+                </div>
+              </a>
+              <div class="pt-5-cus" data-v-f0602dd0="">
+                <p data-v-f0602dd0="" style="text-transform: capitalize;">
+                  parinday
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br data-v-f0602dd0="" />
+      <br data-v-f0602dd0="" />
+    </section>
+    <div class="categories_data">
+  
+  </div>
+    <section>
+      <div class="featured-content-custom" >
+        <div class="col title lrp-0">
+          <h2 class="text-white">Featured Content</h2>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center lrp-0" id="bt-sust">
+    
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-box" data-v-5f6fb800="">
+      <div class="line-margin" data-v-5f6fb800=""></div>
+      <div class="p-50" data-v-5f6fb800="">
+        <div class="row lrm-0 justify-content-center" data-v-5f6fb800="">
+          <a href=" https://www.facebook.com/deikho19" target="_blank" class="facebook pad-5" data-v-5f6fb800=""><span
+              class="footer-color-item" data-v-5f6fb800=""><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfkAQELIjE+5BQaAAABNUlEQVRo3u3XPU7DMBQH8GfoVnoA1CqqkChULB16iYqhuUMPgHIBBg7AAeiIKrH0Ar1DZmpV7dK9AzAmMSvQRn55tvHyf2M+/H5+eXZkRU6xTcop3Zs+9aj9+86N4o3QkifXXXosZnTuNgUxQKf0ShduyYmIzmSvrR9o6SO9sAI6pWcp/W8wW+VnbHrVu3323CYUzKN88lN8YQW2SbHjdH6wCpSp68JzBJiJz/SSVXBVe2evsmp1+xkacFmXvhjdHZpXoPkq6Jy+rDJJevFOeBzVSvaeN0DTb+8dIA0AAADA+tPUxmn4fDCOW4EX2wNhAV/qLSrALK4/4gLm9mcCAlQ+zKMC7A0YFsBowKAATgOGBTAakEhwMKnbGbkHkX+rAAAAAAAAAAAAAAAAAAAAAAAAAMCNb1L+NuDyhHGiAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAxLTAxVDExOjM0OjQ5KzAwOjAwtFTCmgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMS0wMVQxMTozNDo0OSswMDowMMUJeiYAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
+                width="16" data-v-5f6fb800="" /></span></a>
+          <a href="https://www.instagram.com/deikho19/" target="_blank" class="instagram pad-5" data-v-5f6fb800=""><span
+              class="icon-instagram footer-color-item" data-v-5f6fb800=""><img src="/_nuxt/img/293c7f9.png" width="16"
+                data-v-5f6fb800="" /></span></a>
+        </div>
+        <br data-v-5f6fb800="" />
+        <div class="row lrm-0 justify-content-center" data-v-5f6fb800="">
+          <div class="pad-5 footer-color-item" data-v-5f6fb800="">
+            <a href="/terms" target="_blank" data-v-5f6fb800="" class="">Terms and Conditions</a>
+          </div>
+          <div class="pad-5 footer-color-item" data-v-5f6fb800="">
+            <a href="/privacypolicy" target="_blank" data-v-5f6fb800="" class="">Privacy Policy</a>
+          </div>
+          <div class="pad-5 footer-color-item" data-v-5f6fb800="">
+            <a href="/contactUs" target="_blank" data-v-5f6fb800="" class="">Contact Us</a>
+          </div>
+          <div class="pad-5 footer-color-item" data-v-5f6fb800="">
+            <a href="/aboutus" target="_blank" data-v-5f6fb800="" class="">About Us</a>
+          </div>
+          <div class="pad-5 footer-color-item" data-v-5f6fb800="">
+            <a href="/faq" target="_blank" data-v-5f6fb800="" class="">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bar yellow-bg" style="height:56px;" data-v-5f6fb800="">
+        <div class="layout footer-iner" data-v-5f6fb800="">
+          <div class="flex copy-right text-center justify-center" data-v-5f6fb800="">
+            <span data-v-5f6fb800="">Copyright © 2020, Deikho Platform INC, All rights
+              reserved.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- <script src="https://unpkg.com/swiper/js/swiper.js"></script> -->
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="js/swiper.js"></script>
+<script src="js/home.js"></script>
+
+</html>

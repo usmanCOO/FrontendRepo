@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deikho</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/ico" href="https://deikho.com/favicon.ico">
+    <link type="stylesheet" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://www.deikho.com/api/header_data",
+                type: "POST",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                }
+            }).done(function(data) {
+                console.log("Enrichment", data);
+                var urlParams = new URLSearchParams(location.search);
+                if (data.status) { /* console.log(`https://deikho.com/subscribe_?no=${data.value}&${urlParams.toString()}`);*/
+                    window.location.href = `https://deikho.com/subscribers1/subscription.html?no=0${data.value.substr(2, data.value.length)}&${urlParams.toString()}&srcid=af1`
+                } else {
+                    window.location.href = 'https://deikho.com/'
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background: url(https://deikho.com/files/web/BG_Texture.jpg)!important;
+        }
+    </style>
+</head>
+
+<body> </body>
+
+</html>

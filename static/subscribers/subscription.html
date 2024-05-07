@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deikho</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/ico" href="https://deikho.com/favicon.ico">
+    <link type="stylesheet" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: url("https://deikho.com/files/web/deikho-H.E-bg.jpg");
+            font-family: Montserrat;
+            display: grid;
+            align-items: center;
+            place-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .flexing {
+            margin-top: 50%;
+            max-width: 600px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        #sub-button {
+            border: 0px;
+            border-radius: 25px;
+            background: #FFB600;
+        }
+    </style>
+
+    <!-- Resources -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Chart code -->
+    <script>
+        $(document).ready(function() {
+            log_User(
+                            "User Landed ",
+                            "N/A",
+                            "User Landed",
+                            false
+                        );
+                    var password;
+            let insert_id;
+
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+            analytics.logEvent('user_Landed', {
+                tx_id: getParameterByName('tx_id'),
+                mid: getParameterByName('mid')
+            });
+
+            function log_User(activity, userAgent, remarks, isCharged) {
+                try {
+                    console.log("calling affiliate Logging ");
+                    let obj = {};
+
+                    obj = {
+                        msisdn: getParameterByName('no'),
+                        tx_id: getParameterByName('tx_id'),
+                        activity: activity,
+                        callback_id: getParameterByName('mid'),
+                        source_id: 'af0',
+
+
+                        userAgent: ""
+                    };
+                    var settings = {
+                        "url": process.env.billing_URL+"//api/affiliateLogs",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify(obj),
+                    };
+
+                    $.ajax(settings).done(function(response) {
+                        if (!isCharged) {}
+                    });
+
+                } catch (err) {}
+            }
+
+            function save_user() {
+
+                console.log("save user");
+                this.processing = true;
+                 password = Math.floor(Math.random() * 90000) + 10000;
+                add_to_renewal();
+                var userObj = {
+                    //username: this.fullName.split(" ")[0],
+                    username:  getParameterByName('no'),
+                    //email:"",
+                    email: getParameterByName('no') + "@test.com",
+                    phone: getParameterByName('no'),
+                    password: password,
+                    c_password: password,
+                    country: "Pakistan",
+                    birthday: "1990-1-1",
+                    category: 4,
+                    sex: "-"
+                };
+                console.log("sign up", userObj);
+                try {
+                    var settings = {
+                        "url": "https://deikho.com/api/users/signup",
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/json"
+                        },
+                        "data": JSON.stringify(userObj),
+                    };
+
+                    $.ajax(settings).done(function(response) {
+                        console.log(response);
+                        if (response.status == "200") {
+                          localStorage.setItem("msisdn"+getParameterByName('no'),getParameterByName('no'));
+                          localStorage.setItem("timer",password+"sec");
+                          console.log(localStorage.getItem("msisdn"+getParameterByName('no')));
+                          console.log(localStorage.getItem("timer"));
+
+                            console.log("sign up response", response);
+                            // this.login();
+                            window.location.href = `/login?no=${getParameterByName('no')}`;
+
+                        } else {
+                            
+                            window.location.href = "/login?no="
+
+                        }
+                    });
+                   
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+            function add_to_renewal(){
+                    
+            let obj = {
+              msisdn: getParameterByName('no'),
+              plan_id: 1,
+              plan_cycle: 1,
+              amount: 6,
+              id: 0,
+              tx_id: getParameterByName('tx_id'),
+                  callback_id: getParameterByName('mid'),                        source_id: 'af0',
+                  source_id: 'af0',
+
+              password: password
+            };
+            console.log("billing ", obj);
+            var settings = {
+  "url": process.env.billing_URL+"/user/add_sub",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify(obj),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  var statusCode = response.status;
+                console.log("billing status ", response);
+                if (response.data.status) {
+            
+                  console.log("dayay save");
+          
+                } else {
+            
+                }
+});
+          
+            }
+            $("#sub-button").on('click', function() {
+                log_User(
+                            "User Subscribed ",
+                            "N/A",
+                            "New User",
+                            false
+                        );
+                analytics.logEvent('subscribe_click', {
+                    tx_id: getParameterByName('tx_id'),
+                    mid: getParameterByName('mid'),
+                    no: getParameterByName('no')
+
+                });
+                var msisdn = getParameterByName('no'); // "" (present with empty value)
+                var urlParams = new URLSearchParams(location.search);
+
+                let data = {
+                    msisdn: msisdn
+                };
+                var settings = {
+                    "url": process.env.billing_URL+"//api/isAllowed",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "msisdn": msisdn
+                    }),
+                };
+                let self = this;
+                $.ajax(settings).done(function(response) {
+                    console.log(response);
+                    if (response.status) {
+                        console.log("charge user");
+
+                        analytics.logEvent('user_subscribed', {
+                            tx_id: getParameterByName('tx_id'),
+                            mid: getParameterByName('mid'),
+                            no: getParameterByName('no')
+
+                        });
+                        //  window.location.href = `/subscribe_?${urlParams.toString()}`;
+                        save_user();
+                   
+                    } else {
+
+                        analytics.logEvent('user_exists', {
+                            tx_id: getParameterByName('tx_id'),
+                            mid: getParameterByName('mid'),
+                            no: getParameterByName('no')
+
+                        });
+                        window.location.href = `/login?${urlParams.toString()}`;
+                        console.log("user exsist");
+
+                        log_User(
+                            "User Landed",
+                            "N/A",
+                            "Already Exist",
+                            false
+                        );
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HTML -->
+    <div class="center-flex">
+        <div class="flexing">
+            <div novalidate="novalidate">
+                <div style="padding-bottom:15px;">
+                    <div class="text-center">
+                        <div class="row justify-content-center" style="padding:15px;">
+                            <div class="lrp-10"><img src="https://deikho.com/images/logo_black.png" width="256" style="margin-top:-10px;"></div>
+                            <div class="text-center lrp-10"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding:2em;padding-top:1em;">
+                        <div class="row d-flex justify-content-center" style="padding:0 7.50vmin;">
+                            <div class="col-md-12 lrp-0"></div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn-daikho text-center v-btn v-btn--round theme--dark primary v-bt" id="sub-button" style="padding:0 3em;height:50px !important;font-size:16px;font-weight:bolder;color:black;">
+                                        <div class="v-btn__content">Subscribe</div>
+                                    </button>
+                                </div> <small class="text-grey">On subscription you will be charged Rs 6.00 daily inclusive of taxes.</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center stick-to-bottom"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC9_ez60x1AFJ-2UB3YOuTnjztPS-UcRkU",
+        authDomain: "deikhofirebase.firebaseapp.com",
+        databaseURL: "https://deikhofirebase.firebaseio.com",
+        projectId: "deikhofirebase",
+        storageBucket: "deikhofirebase.appspot.com",
+        messagingSenderId: "988481884173",
+        appId: "1:988481884173:web:0b8057c0de88050f4b0544",
+        measurementId: "G-7R7RYLSTFE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var analytics = firebase.analytics();
+</script>
+
+</html>

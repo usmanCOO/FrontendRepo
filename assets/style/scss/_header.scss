@@ -1,0 +1,160 @@
+/* headerbg */
+.headerbg {
+  @include header-bg();
+  z-index: 4 !important;
+  position: fixed;
+  .v-toolbar__content {
+    .spacer {
+      margin-left: 1vw;
+    }
+  }
+}
+.opsnav {
+  .headerbg {
+    height: 100px;
+    position: absolute;
+    @include opsnav();
+    box-shadow: none !important;
+  }
+}
+// user_activator
+.header__right__side {
+  .v-menu--inline {
+    height: 100% !important;
+    .v-menu__activator,
+    .v-menu {
+      .v-avatar {
+        height: 36px !important;
+        width: 36px !important;
+      }
+    }
+  }
+}
+
+.v-tabs__div {
+  .nuxt-link-active {
+    color: $white !important;
+    opacity: 1;
+  }
+}
+
+// vodlixmenu
+.vodlixmenu {
+  background: rgba(0, 0, 0, 0.86) !important;
+  div {
+    a.v-list__tile {
+      color: $white !important;
+      &:hover {
+        color: $text-hover !important;
+      }
+    }
+  }
+}
+
+// Searchbar
+.searchinner {
+  position: relative;
+  width: auto;
+  height: 40px;
+  width: 30vw !important;
+  top: 5px;
+  right: 10px;
+  .btnsearch {
+    height: 75%;
+    width: auto;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    .v-icon {
+      &:hover {
+        background: none;
+      }
+    }
+  }
+  .searchbar {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    width: 30vw;
+    color: $white;
+    display: none;
+    .theme--dark {
+      background: none !important;
+      background-color: none !important;
+    }
+    .inputsrch {
+      background: none !important;
+      width: 55% !important ;
+      float: left;
+      .v-input__control {
+        min-height: 40px !important;
+        .v-input__slot {
+          background: none !important;
+          box-shadow: none;
+          .v-select__slot {
+            .v-label {
+              top: calc(46% - 10px) !important;
+              font-size: 14px !important;
+            }
+            label,
+            input {
+              color: $white !important;
+            }
+          }
+        }
+      }
+    }
+    .sercdrop {
+      display: inline-block;
+      margin-top: 5px;
+      div {
+        .v-btn {
+          background: none !important;
+          box-shadow: none;
+          &:hover {
+            background: none !important;
+          }
+          .v-btn__content {
+            background: none !important;
+            &:hover {
+              background: none !important;
+              box-shadow: none;
+            }
+          }
+        }
+        .v-btn--active:before,
+        .v-btn:hover:before,
+        .v-btn:focus:before {
+          background-color: #141414 !important;
+        }
+      }
+      .v-menu__content.theme--dark.menuable__content__active {
+        top: 53px !important;
+      }
+    }
+  }
+  &.active {
+    width: auto;
+    .searchbar {
+      display: block;
+      background: #141414;
+      border: 1px solid $sub-btn;
+      @include rightopensrch;
+    }
+  }
+}
+.srchles {
+  div {
+    .v-list__tile {
+      .v-list__tile__title {
+        display: block !important;
+        &:hover {
+          color: $text-hover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
